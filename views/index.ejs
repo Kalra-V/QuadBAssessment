@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hodlinfo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Best Price to Trade</h1>
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Last Traded Price</th>
+              <th>Buy / Sell Price</th>
+              <th>Sell Price</th>
+              <th>Volume</th>
+              <th>Base Unit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% tickers.forEach(function(ticker) { %>
+              <tr class="row">
+                <td class="row-border-left"><%= ticker.name %></td>
+                <td>₹<%= ticker.last_traded_price %></td>
+                <td>₹<%= ticker.buy %> / ₹<%= ticker.sell %></td>
+                <td>₹<%= ticker.sell %></td>
+                <td><%= ticker.volume %></td>
+                <td class="row-border-right"><%= ticker.base_unit %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
